@@ -11,7 +11,7 @@ jobs:
     # Reasonable backstop against any unexpectedly long-running step.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Read Node version from mise.toml
         id: node
@@ -100,7 +100,7 @@ jobs:
     if: needs.checkEnv.outputs.usernameExists == 'true'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: |
           mkdir -p build/StandaloneWindows64
           touch build/StandaloneWindows64/steam-deploy-test.txt
